@@ -8,8 +8,8 @@ esplugin {
 }
 
 dependencies {
-  compileOnly "org.elasticsearch.plugin:x-pack-core:${version}"
-  testCompile "org.elasticsearch.client.x-pack-transport:${version}"
+  compileOnly "com.bigdataflatform.elasticsearch:x-pack-core:${version}"
+  testCompile "com.bigdataflatform.elasticsearch.x-pack-transport:${version}"
 }
 
 

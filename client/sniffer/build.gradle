@@ -23,7 +23,7 @@ apply plugin: 'nebula.maven-scm'
 targetCompatibility = JavaVersion.VERSION_1_7
 sourceCompatibility = JavaVersion.VERSION_1_7
 
-group = 'org.elasticsearch.client'
+group = 'com.bigdataflatform.elasticsearch'
 archivesBaseName = 'elasticsearch-rest-client-sniffer'
 
 publishing {
@@ -35,14 +35,14 @@ publishing {
 }
 
 dependencies {
-  compile "org.elasticsearch.client:elasticsearch-rest-client:${version}"
+  compile "com.bigdataflatform.elasticsearch:elasticsearch-rest-client:${version}"
   compile "org.apache.httpcomponents:httpclient:${versions.httpclient}"
   compile "org.apache.httpcomponents:httpcore:${versions.httpcore}"
   compile "commons-codec:commons-codec:${versions.commonscodec}"
   compile "commons-logging:commons-logging:${versions.commonslogging}"
   compile "com.fasterxml.jackson.core:jackson-core:${versions.jackson}"
 
-  testCompile "org.elasticsearch.client:test:${version}"
+  testCompile "com.bigdataflatform.elasticsearch:test:${version}"
   testCompile "com.carrotsearch.randomizedtesting:randomizedtesting-runner:${versions.randomizedrunner}"
   testCompile "junit:junit:${versions.junit}"
   testCompile "org.hamcrest:hamcrest-all:${versions.hamcrest}"

@@ -1,5 +1,5 @@
 dependencies {
-  testCompile "org.elasticsearch.plugin:x-pack-core:${version}"
+  testCompile "com.bigdataflatform.elasticsearch:x-pack-core:${version}"
 }
 
 Project mainProject = project
@@ -23,7 +23,7 @@ subprojects {
   }
 
   dependencies {
-    testCompile "org.elasticsearch.plugin:x-pack-core:${version}"
+    testCompile "com.bigdataflatform.elasticsearch:x-pack-core:${version}"
   }
 
   integTestCluster {

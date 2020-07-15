@@ -41,7 +41,7 @@ if (properties.get("org.elasticsearch.acceptScanTOS", "false") == "true") {
 
 // common maven publishing configuration
 allprojects {
-  group = 'org.elasticsearch'
+  group = 'com.bigdataflatform.elasticsearch'
   version = VersionProperties.elasticsearch
   description = "Elasticsearch subproject ${project.path}"
 }
@@ -215,21 +215,21 @@ allprojects {
     them as external dependencies so the build plugin that we use can be used
     to build elasticsearch plugins outside of the elasticsearch source tree. */
   ext.projectSubstitutions = [
-    "org.elasticsearch.gradle:build-tools:${version}": ':build-tools',
-    "org.elasticsearch:rest-api-spec:${version}": ':rest-api-spec',
-    "org.elasticsearch:elasticsearch:${version}": ':server',
-    "org.elasticsearch:elasticsearch-cli:${version}": ':libs:cli',
-    "org.elasticsearch:elasticsearch-core:${version}": ':libs:core',
-    "org.elasticsearch:elasticsearch-x-content:${version}": ':libs:x-content',
-    "org.elasticsearch:elasticsearch-secure-sm:${version}": ':libs:secure-sm',
-    "org.elasticsearch:elasticsearch-ssl-config:${version}": ':libs:elasticsearch-ssl-config',
-    "org.elasticsearch.client:elasticsearch-rest-client:${version}": ':client:rest',
-    "org.elasticsearch.client:elasticsearch-rest-client-sniffer:${version}": ':client:sniffer',
-    "org.elasticsearch.client:elasticsearch-rest-high-level-client:${version}": ':client:rest-high-level',
-    "org.elasticsearch.client:test:${version}": ':client:test',
-    "org.elasticsearch.client:transport:${version}": ':client:transport',
-    "org.elasticsearch.plugin:elasticsearch-scripting-painless-spi:${version}": ':modules:lang-painless:spi',
-    "org.elasticsearch.test:framework:${version}": ':test:framework',
+    "com.bigdataflatform.elasticsearch:build-tools:${version}": ':build-tools',
+    "com.bigdataflatform.elasticsearch:rest-api-spec:${version}": ':rest-api-spec',
+    "com.bigdataflatform.elasticsearch:elasticsearch:${version}": ':server',
+    "com.bigdataflatform.elasticsearch:elasticsearch-cli:${version}": ':libs:cli',
+    "com.bigdataflatform.elasticsearch:elasticsearch-core:${version}": ':libs:core',
+    "com.bigdataflatform.elasticsearch:elasticsearch-x-content:${version}": ':libs:x-content',
+    "com.bigdataflatform.elasticsearch:elasticsearch-secure-sm:${version}": ':libs:secure-sm',
+    "com.bigdataflatform.elasticsearch:elasticsearch-ssl-config:${version}": ':libs:elasticsearch-ssl-config',
+    "com.bigdataflatform.elasticsearch:elasticsearch-rest-client:${version}": ':client:rest',
+    "com.bigdataflatform.elasticsearch:elasticsearch-rest-client-sniffer:${version}": ':client:sniffer',
+    "com.bigdataflatform.elasticsearch:elasticsearch-rest-high-level-client:${version}": ':client:rest-high-level',
+    "com.bigdataflatform.elasticsearch:test:${version}": ':client:test',
+    "com.bigdataflatform.elasticsearch:transport:${version}": ':client:transport',
+    "com.bigdataflatform.elasticsearch:elasticsearch-scripting-painless-spi:${version}": ':modules:lang-painless:spi',
+    "com.bigdataflatform.elasticsearch:framework:${version}": ':test:framework',
     "org.elasticsearch.distribution.integ-test-zip:elasticsearch:${version}": ':distribution:archives:integ-test-zip',
     "org.elasticsearch.distribution.zip:elasticsearch:${version}": ':distribution:archives:zip',
     "org.elasticsearch.distribution.zip:elasticsearch-oss:${version}": ':distribution:archives:oss-zip',
@@ -239,18 +239,18 @@ allprojects {
     "org.elasticsearch.distribution.rpm:elasticsearch-oss:${version}": ':distribution:packages:oss-rpm',
     "org.elasticsearch.distribution.deb:elasticsearch:${version}": ':distribution:packages:deb',
     "org.elasticsearch.distribution.deb:elasticsearch-oss:${version}": ':distribution:packages:oss-deb',
-    "org.elasticsearch.test:logger-usage:${version}": ':test:logger-usage',
-    "org.elasticsearch.xpack.test:feature-aware:${version}": ':x-pack:test:feature-aware',
+    "com.bigdataflatform.elasticsearch:logger-usage:${version}": ':test:logger-usage',
+    "com.bigdataflatform.elasticsearch:feature-aware:${version}": ':x-pack:test:feature-aware',
     // for transport client
-    "org.elasticsearch.plugin:transport-netty4-client:${version}": ':modules:transport-netty4',
-    "org.elasticsearch.plugin:reindex-client:${version}": ':modules:reindex',
-    "org.elasticsearch.plugin:lang-mustache-client:${version}": ':modules:lang-mustache',
-    "org.elasticsearch.plugin:parent-join-client:${version}": ':modules:parent-join',
-    "org.elasticsearch.plugin:aggs-matrix-stats-client:${version}": ':modules:aggs-matrix-stats',
-    "org.elasticsearch.plugin:percolator-client:${version}": ':modules:percolator',
-    "org.elasticsearch.plugin:rank-eval-client:${version}": ':modules:rank-eval',
+    "com.bigdataflatform.elasticsearch:transport-netty4-client:${version}": ':modules:transport-netty4',
+    "com.bigdataflatform.elasticsearch:reindex-client:${version}": ':modules:reindex',
+    "com.bigdataflatform.elasticsearch:lang-mustache-client:${version}": ':modules:lang-mustache',
+    "com.bigdataflatform.elasticsearch:parent-join-client:${version}": ':modules:parent-join',
+    "com.bigdataflatform.elasticsearch:aggs-matrix-stats-client:${version}": ':modules:aggs-matrix-stats',
+    "com.bigdataflatform.elasticsearch:percolator-client:${version}": ':modules:percolator',
+    "com.bigdataflatform.elasticsearch:rank-eval-client:${version}": ':modules:rank-eval',
     // for security example plugins
-    "org.elasticsearch.plugin:x-pack-core:${version}": ':x-pack:plugin:core',
+    "com.bigdataflatform.elasticsearch:x-pack-core:${version}": ':x-pack:plugin:core',
     "org.elasticsearch.client.x-pack-transport:${version}": ':x-pack:transport-client'
   ]
   // substitute unreleased versions with projects that check out and build locally

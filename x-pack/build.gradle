@@ -4,7 +4,7 @@ import org.elasticsearch.gradle.precommit.LicenseHeadersTask
 Project xpackRootProject = project
 
 subprojects {
-  group = 'org.elasticsearch.plugin'
+  group = 'com.bigdataflatform.elasticsearch'
   ext.xpackRootProject = xpackRootProject
   ext.xpackProject = { String projectName -> xpackRootProject.project(projectName) }
   // helper method to find the path to a module

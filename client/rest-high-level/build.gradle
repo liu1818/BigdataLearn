@@ -22,7 +22,7 @@ apply plugin: 'nebula.maven-base-publish'
 apply plugin: 'nebula.maven-scm'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-group = 'org.elasticsearch.client'
+group = 'com.bigdataflatform.elasticsearch'
 archivesBaseName = 'elasticsearch-rest-high-level-client'
 
 publishing {
@@ -50,22 +50,22 @@ dependencies {
    * Everything in the "shadow" configuration is *not* copied into the
    * shadowJar.
    */
-  compile "org.elasticsearch:elasticsearch:${version}"
-  compile "org.elasticsearch.client:elasticsearch-rest-client:${version}"
-  compile "org.elasticsearch.plugin:parent-join-client:${version}"
-  compile "org.elasticsearch.plugin:aggs-matrix-stats-client:${version}"
-  compile "org.elasticsearch.plugin:rank-eval-client:${version}"
-  compile "org.elasticsearch.plugin:lang-mustache-client:${version}"
+  compile "com.bigdataflatform.elasticsearch:elasticsearch:${version}"
+  compile "com.bigdataflatform.elasticsearch:elasticsearch-rest-client:${version}"
+  compile "com.bigdataflatform.elasticsearch:parent-join-client:${version}"
+  compile "com.bigdataflatform.elasticsearch:aggs-matrix-stats-client:${version}"
+  compile "com.bigdataflatform.elasticsearch:rank-eval-client:${version}"
+  compile "com.bigdataflatform.elasticsearch:lang-mustache-client:${version}"
 
-  testCompile "org.elasticsearch.client:test:${version}"
-  testCompile "org.elasticsearch.test:framework:${version}"
+  testCompile "com.bigdataflatform.elasticsearch:test:${version}"
+  testCompile "com.bigdataflatform.elasticsearch:framework:${version}"
   testCompile "com.carrotsearch.randomizedtesting:randomizedtesting-runner:${versions.randomizedrunner}"
   testCompile "junit:junit:${versions.junit}"
   testCompile "org.hamcrest:hamcrest-all:${versions.hamcrest}"
   //this is needed to make RestHighLevelClientTests#testApiNamingConventions work from IDEs
-  testCompile "org.elasticsearch:rest-api-spec:${version}"
+  testCompile "com.bigdataflatform.elasticsearch:rest-api-spec:${version}"
 
-  restSpec "org.elasticsearch:rest-api-spec:${version}"
+  restSpec "com.bigdataflatform.elasticsearch:rest-api-spec:${version}"
 }
 
 //we need to copy the yaml spec so we can check naming (see RestHighlevelClientTests#testApiNamingConventions)

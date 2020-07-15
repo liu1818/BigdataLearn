@@ -32,7 +32,7 @@ publishing {
 }
 
 dependencies {
-    compile "org.elasticsearch:elasticsearch-core:${version}"
+    compile "com.bigdataflatform.elasticsearch:elasticsearch-core:${version}"
 
     compile "org.yaml:snakeyaml:${versions.snakeyaml}"
     compile "com.fasterxml.jackson.core:jackson-core:${versions.jackson}"

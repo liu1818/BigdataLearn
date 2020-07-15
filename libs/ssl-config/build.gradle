@@ -21,7 +21,7 @@ apply plugin: 'nebula.maven-base-publish'
 apply plugin: 'nebula.maven-scm'
 
 dependencies {
-    compile "org.elasticsearch:elasticsearch-core:${version}"
+    compile "com.bigdataflatform.elasticsearch:elasticsearch-core:${version}"
 
     if (isEclipse == false || project.path == ":libs:ssl-config-tests") {
         testCompile("org.elasticsearch.test:framework:${version}") {
