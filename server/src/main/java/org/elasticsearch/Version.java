@@ -212,8 +212,10 @@ public class Version implements Comparable<Version>, ToXContentFragment {
     public static final Version V_6_7_0 = new Version(V_6_7_0_ID, org.apache.lucene.util.Version.LUCENE_7_7_0);
     public static final int V_6_7_1_ID = 6070199;
     public static final Version V_6_7_1 = new Version(V_6_7_1_ID, org.apache.lucene.util.Version.LUCENE_7_7_0);
+    public static final int V_6_7_1_6515_ID = 6070150;
+    public static final Version V_6_7_1_6515 = new Version(V_6_7_1_6515_ID, org.apache.lucene.util.Version.LUCENE_7_7_0);
 
-    public static final Version CURRENT = V_6_7_1;
+    public static final Version CURRENT = V_6_7_1_6515;
 
     static {
         assert CURRENT.luceneVersion.equals(org.apache.lucene.util.Version.LATEST) : "Version must be upgraded to ["
@@ -226,6 +228,8 @@ public class Version implements Comparable<Version>, ToXContentFragment {
 
     public static Version fromId(int id) {
         switch (id) {
+            case V_6_7_1_6515_ID:
+                return V_6_7_1_6515;
             case V_6_7_1_ID:
                 return V_6_7_1;
             case V_6_7_0_ID:
@@ -469,6 +473,8 @@ public class Version implements Comparable<Version>, ToXContentFragment {
                     assert build < 50 : "expected a beta build but " + build + " >= 50";
                 } else if (buildStr.startsWith("RC") || buildStr.startsWith("rc")) {
                     build = Integer.parseInt(buildStr.substring(2)) + 50;
+                } else if(buildStr.startsWith("6515")){
+                    build = 50;
                 } else {
                     throw new IllegalArgumentException("unable to parse version " + version);
                 }
@@ -614,13 +620,15 @@ public class Version implements Comparable<Version>, ToXContentFragment {
                 sb.append(".Beta");
             }
             sb.append(major < 5 ? build : build-25);
-        } else if (build < 99) {
+        } else if (build < 99 && build !=50) {
             if (major >= 2) {
                 sb.append("-rc");
             } else {
                 sb.append(".RC");
             }
             sb.append(build - 50);
+        } else if (build ==50) {
+            sb.append("-6515");
         }
         return sb.toString();
     }

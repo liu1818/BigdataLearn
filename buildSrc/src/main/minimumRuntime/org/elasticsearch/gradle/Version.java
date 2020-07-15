@@ -15,6 +15,8 @@ public final class Version implements Comparable<Version> {
 
     private static final Pattern pattern =
             Pattern.compile("(\\d)+\\.(\\d+)\\.(\\d+)(-alpha\\d+|-beta\\d+|-rc\\d+)?(-SNAPSHOT)?");
+    private static final Pattern modifypattern =
+        Pattern.compile("(\\d)+\\.(\\d+)\\.(\\d+)(-alpha\\d+|-beta\\d+|-rc\\d+)?(-SNAPSHOT)?((-SNAPSHOT-6515))?");
 
     public Version(int major, int minor, int revision) {
         Objects.requireNonNull(major, "major version can't be null");
@@ -37,7 +39,8 @@ public final class Version implements Comparable<Version> {
 
     public static Version fromString(final String s) {
         Objects.requireNonNull(s);
-        Matcher matcher = pattern.matcher(s);
+        //Matcher matcher = pattern.matcher(s);
+        Matcher matcher = modifypattern.matcher(s);
         if (matcher.matches() == false) {
             throw new IllegalArgumentException(
                 "Invalid version format: '" + s + "'. Should be major.minor.revision[-(alpha|beta|rc)Number][-SNAPSHOT]"
